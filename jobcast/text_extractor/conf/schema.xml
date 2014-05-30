@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="example" version="1.5">
+    <fields>
+
+        <field name="_version_" type="long" indexed="true" stored="true"/>
+        
+        <field name="id" type="int" indexed="true" stored="true" required="true"/>
+        <field name="content" type="text_general" indexed="false" stored="true" multiValued="true"/>
+        
+    </fields>
+
+    <uniqueKey>id</uniqueKey>
+
+    <types>
+        
+        <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+        <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+        
+        <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+            <analyzer type="index">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+            </analyzer>
+            <analyzer type="query">
+                <tokenizer class="solr.StandardTokenizerFactory"/>
+            </analyzer>
+        </fieldType>
+  
+    </types>
+
+</schema>
