@@ -60,6 +60,7 @@
             </analyzer>
         </fieldType>
 
+        <!-- Removed Japanese because it was unsable.  Often got this error: TokenStream contract violation: close() call missing . -->
         <fieldType name="multiText"
             class="sia.ch14.MultiTextField" sortMissingLast="true"
             defaultFieldType="text_general"
@@ -68,7 +69,6 @@
                            fr:text_fr,
                            de:text_de,
                            it:text_it,
-                           ja:text_ja,
                            pt:text_pt,
                            ru:text_ru,
                            es:text_es,

@@ -1024,7 +1024,7 @@
             <lst name="invariants">
                 <str name="langid.fl">resumeText</str>
                 <str name="langid.langField">language</str>
-                <str name="langid.whitelist">en,nl,fr,de,it,ja,pt,ru,es,ar</str>
+                <str name="langid.whitelist">en,nl,fr,de,it,pt,ru,es,ar</str>
                 <str name="langid.fallback">en</str>
             </lst>
             <lst name="defaults">
