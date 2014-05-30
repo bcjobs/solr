@@ -1030,7 +1030,7 @@
             <lst name="defaults">
                 <str name="mtf-langid.prependFields">resumeText</str>
                 <str name="mtf-langid.prependGranularity">fieldValue</str>
-                <str name="mtf-langid.hidePrependedLangs">true</str><!-- bug: when setting this to true, the last character is resume from 'stored' value, although it seems intact in the 'indexed' value.  (e.g. 'hello' will come back as 'hell').  Add an extra space at the end to overcome this. -->
+                <str name="mtf-langid.hidePrependedLangs">false</str><!-- bug: when setting this to true, the last character is resume from 'stored' value, although it seems intact in the 'indexed' value.  (e.g. 'hello' will come back as 'hell').  Add an extra space at the end to overcome this. -->
             </lst>
         </processor>
         <processor class="solr.LogUpdateProcessorFactory" />
