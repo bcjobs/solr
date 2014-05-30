@@ -9,11 +9,11 @@
         <field name="jobId" type="int" indexed="true" stored="true" required="false"/>
         <field name="firstName" type="string" indexed="false" stored="true" required="true"/>
         <field name="lastName" type="string" indexed="false" stored="true" required="true"/>
-        <field name="city" type="string" indexed="false" stored="true" required="false"/>
-        <field name="country" type="string" indexed="false" stored="true" required="false"/>
-        <field name="countryId" type="int" indexed="true" stored="true" required="false"/>
-        <field name="province" type="string" indexed="false" stored="true" required="false"/>
-        <field name="provinceId" type="int" indexed="true" stored="true" required="false"/>
+        <field name="city" type="string" indexed="false" stored="true" required="true"/>
+        <field name="country" type="string" indexed="false" stored="true" required="true"/>
+        <field name="countryId" type="int" indexed="true" stored="true" required="true"/>
+        <field name="province" type="string" indexed="false" stored="true" required="true"/>
+        <field name="provinceId" type="int" indexed="true" stored="true" required="true"/>
         <field name="fields" type="string" indexed="true" stored="true" required="false" multiValued="true"/>
 
         <field name="resumeText" type="multiText" indexed="true" stored="true" multiValued="true"/>
@@ -74,6 +74,7 @@
                            es:text_es,
                            ar:text_ar"/>
 
+        <!-- English -->
         <fieldType name="text_en" class="solr.TextField" positionIncrementGap="100">
             <analyzer type="index">
                 <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="([a-zA-Z])\1+" replacement="$1$1"/>
