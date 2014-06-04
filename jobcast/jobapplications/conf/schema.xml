@@ -7,20 +7,20 @@
         <field name="id" type="int" indexed="true" stored="true" required="true"/>
         <field name="companyId" type="int" indexed="true" stored="true" required="true"/>
         <field name="jobId" type="int" indexed="true" stored="true" required="false"/>
-        <field name="firstName" type="string" indexed="false" stored="true" required="true"/>
-        <field name="lastName" type="string" indexed="false" stored="true" required="true"/>
+        <field name="name" type="string" indexed="false" stored="true" required="true"/>
         <field name="city" type="string" indexed="false" stored="true" required="true"/>
         <field name="country" type="string" indexed="false" stored="true" required="true"/>
         <field name="countryId" type="int" indexed="true" stored="true" required="true"/>
         <field name="province" type="string" indexed="false" stored="true" required="true"/>
         <field name="provinceId" type="int" indexed="true" stored="true" required="true"/>
-        <field name="fields" type="string" indexed="true" stored="true" required="false" multiValued="true"/>
 
-        <field name="resumeText" type="multiText" indexed="true" stored="true" multiValued="true"/>
+        <field name="resumeText" type="multiText" indexed="true" stored="true"/>
         <field name="language"  type="string"  indexed="true"  stored="true"/>
         
         <field name="text" type="text_general" indexed="true" stored="false" required="false"/>
 
+        <dynamicField name="*_field"  type="string" indexed="true" stored="true" />
+        
     </fields>
 
     <uniqueKey>id</uniqueKey>
