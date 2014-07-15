@@ -5,14 +5,12 @@
         <field name="_version_" type="long" indexed="true" stored="true"/>
 
         <field name="id" type="int" indexed="true" stored="true" required="true"/>
+        <field name="time" type="tdate" indexed="true" stored="true" required="true"/>
         <field name="companyId" type="int" indexed="true" stored="true" required="true"/>
         <field name="jobId" type="int" indexed="true" stored="true" required="false"/>
+        <field name="referralId" type="int" indexed="true" stored="true" required="false"/>
         <field name="name" type="string" indexed="false" stored="true" required="true"/>
-        <field name="city" type="string" indexed="false" stored="true" required="true"/>
-        <field name="country" type="string" indexed="false" stored="true" required="true"/>
-        <field name="countryId" type="int" indexed="true" stored="true" required="true"/>
-        <field name="province" type="string" indexed="false" stored="true" required="true"/>
-        <field name="provinceId" type="int" indexed="true" stored="true" required="true"/>
+        <field name="email" type="string" indexed="false" stored="true" required="true"/>
 
         <field name="resumeText" type="multiText" indexed="true" stored="true"/>
         <field name="language"  type="string"  indexed="true"  stored="true"/>
@@ -21,9 +19,9 @@
 
         <dynamicField name="*_field"  type="string" indexed="true" stored="true" />
         
-        <copyField source="city" dest="text" />
-        <copyField source="country" dest="text" />
-        <copyField source="province" dest="text" />
+        <copyField source="name" dest="text" />
+        <copyField source="email" dest="text" />
+        <copyField source="location" dest="text" />
         <copyField source="*_field" dest="text" />
         
     </fields>
