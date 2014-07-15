@@ -21,7 +21,6 @@
         
         <copyField source="name" dest="text" />
         <copyField source="email" dest="text" />
-        <copyField source="location" dest="text" />
         <copyField source="*_field" dest="text" />
         
     </fields>
