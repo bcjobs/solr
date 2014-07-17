@@ -15,6 +15,7 @@
         <field name="province" type="string" indexed="false" stored="true" required="false"/>
         <field name="provinceId" type="int" indexed="true" stored="true" required="false"/>
         <field name="location" type="location" indexed="true" stored="true" required="false"/><!-- Make sure stored is true, otherwise we'll get update errors -->
+        <field name="locationDescription" type="string" indexed="false" stored="true" required="false"/>
         <field name="eligibleToWork" type="boolean" indexed="true" stored="true" required="true"/>
         <field name="degreeLevel" type="int" indexed="true" stored="true" required="false"/>
         <field name="positionTypeIds" type="int" indexed="true" stored="true" required="false" multiValued="true"/>
