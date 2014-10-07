@@ -14,8 +14,6 @@
         <field name="country" type="string" indexed="false" stored="true" required="false"/>
         <field name="province" type="string" indexed="false" stored="true" required="false"/>
         <field name="provinceId" type="int" indexed="true" stored="true" required="false"/>
-        <field name="location" type="string" indexed="false" stored="true" required="false"/>
-        <field name="locationCoordinate" type="location" indexed="true" stored="true" required="false"/><!-- Make sure stored is true, otherwise we'll get update errors -->
         <field name="eligibleToWork" type="boolean" indexed="true" stored="true" required="true"/>
         <field name="degreeLevel" type="int" indexed="true" stored="true" required="false"/>
         <field name="positionTypeIds" type="int" indexed="true" stored="true" required="false" multiValued="true"/>
@@ -42,8 +40,7 @@
         <field name="skills3" type="text_skill" indexed="true" stored="true" required="false" multiValued="true"/>
         <field name="skills4" type="text_skill" indexed="true" stored="true" required="false" multiValued="true"/>
         
-        <!-- Type used to index the lat and lon components for the "location" FieldType -->
-        <dynamicField name="*_coordinate" type="tdouble" indexed="true" stored="false" />
+        
         
         <field name="text" type="text_general" indexed="true" stored="false" required="false"/>
         
@@ -71,9 +68,6 @@
         <fieldType name="pdouble" class="solr.DoubleField"/>
         <fieldType name="pdate" class="solr.DateField" sortMissingLast="true"/>
         <fieldType name="random" class="solr.RandomSortField" indexed="true" />
-        
-        <!-- A specialized field for geospatial search. If indexed, this fieldType must not be multivalued. -->
-        <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_coordinate"/>
         
         <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
             <analyzer type="index">
