@@ -10,6 +10,7 @@
         <field name="confidential" type="boolean" indexed="false" stored="true" required="true"/>
         <field name="blockRecruiters" type="boolean" indexed="true" stored="true" required="true"/>
         <field name="modifiedDate" type="tdate" indexed="true" stored="true" required="true"/>
+        <field name="availableOn" type="tdate" indexed="true" stored="true" required="false"/>
         <field name="city" type="string" indexed="false" stored="true" required="false"/>
         <field name="country" type="string" indexed="false" stored="true" required="false"/>
         <field name="province" type="string" indexed="false" stored="true" required="false"/>
@@ -19,6 +20,13 @@
         <field name="positionTypeIds" type="int" indexed="true" stored="true" required="false" multiValued="true"/>
         <field name="memberStatusId" type="int" indexed="true" stored="true" required="true"/>
         <field name="careerLevelId" type="int" indexed="true" stored="true" required="false"/>
+        <field name="jobCategoryIds" type="int" indexed="true" stored="true" required="false" multiValued="true"/>
+        <field name="postSecondaryInstitutionId" type="int" indexed="true" stored="true" required="false"/>
+        
+        <dynamicField name="experienceMonthsInDiscipline_*"  type="int" indexed="true" stored="true" />
+        <dynamicField name="proficiencyIdInLanguageId_*"  type="int" indexed="true" stored="true" />
+        
+        <field name="relocations_rpt" type="location_rpt" indexed="true" stored="true" required="false" multiValued="true" />
         
         <field name="resumeText" type="text_resume" indexed="true" stored="true" required="false"/>
         
@@ -39,8 +47,6 @@
         <field name="skills2" type="text_skill" indexed="true" stored="true" required="false" multiValued="true"/>
         <field name="skills3" type="text_skill" indexed="true" stored="true" required="false" multiValued="true"/>
         <field name="skills4" type="text_skill" indexed="true" stored="true" required="false" multiValued="true"/>
-        
-        
         
         <field name="text" type="text_general" indexed="true" stored="false" required="false"/>
         
@@ -142,6 +148,14 @@
                 <filter class="solr.SynonymFilterFactory" synonyms="synonyms_resume.txt" ignoreCase="true" expand="true"/>
             </analyzer>
         </fieldType>
+        
+        <!-- example from here: https://cwiki.apache.org/confluence/display/solr/Spatial+Search -->
+        <fieldType name="location_rpt"
+            class="solr.SpatialRecursivePrefixTreeFieldType"
+            spatialContextFactory="com.spatial4j.core.context.jts.JtsSpatialContextFactory"
+            distErrPct="0.025"
+            maxDistErr="0.000009"
+            units="degrees" />
     </types>
 
 </schema>
