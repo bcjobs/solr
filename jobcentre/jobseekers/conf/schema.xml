@@ -10,7 +10,7 @@
         <field name="confidential" type="boolean" indexed="false" stored="true" required="true"/>
         <field name="blockRecruiters" type="boolean" indexed="true" stored="true" required="true"/>
         <field name="modifiedDate" type="tdate" indexed="true" stored="true" required="true"/>
-        <field name="availableOn" type="tdate" indexed="true" stored="true" required="false"/>
+        <field name="availableToWorkDate" type="tdate" indexed="true" stored="true" required="false"/>
         <field name="city" type="string" indexed="false" stored="true" required="false"/>
         <field name="country" type="string" indexed="false" stored="true" required="false"/>
         <field name="province" type="string" indexed="false" stored="true" required="false"/>
