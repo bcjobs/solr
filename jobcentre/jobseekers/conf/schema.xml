@@ -22,11 +22,13 @@
         <field name="careerLevelId" type="int" indexed="true" stored="true" required="false"/>
         <field name="jobCategoryIds" type="int" indexed="true" stored="true" required="false" multiValued="true"/>
         <field name="postSecondaryInstitutionId" type="int" indexed="true" stored="true" required="false"/>
+        <field name="postSecondaryInstitutionName" type="string" indexed="false" stored="true" required="false"/>
         <field name="enrolledInPostSecondaryCourseIds" type="int" indexed="true" stored="true" required="false" multiValued="true"/>
         
         <dynamicField name="experienceMonthsInDiscipline_*"  type="int" indexed="true" stored="true" />
         <dynamicField name="proficiencyIdInLanguageId_*"  type="int" indexed="true" stored="true" />
         
+        <field name="relocations" type="string" indexed="false" stored="true" required="false" multiValued="true"/>
         <field name="relocations_rpt" type="location_rpt" indexed="true" stored="true" required="false" multiValued="true" />
         
         <field name="resumeText" type="text_resume" indexed="true" stored="true" required="false"/>
